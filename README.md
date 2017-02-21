@@ -3,11 +3,20 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: 
+The naked twins should be approached by looking at each boxes includes same two possible digit values in the same unit(row,column,square or newly added diagonal). If there are two boxes in accordance with this definition, these 2-digit values should be removed from other boxes in the same unit. Because there is no possibility occurrence of these digit values in other boxes of unit.  After this operations, new boxes with 2- digit values may be formed due to pruning of boxes.  So, this operation should be iterative until we could not find any new twin boxes. 
+
+Technically, we minimize domain of each variable by removing inconsistent values to create arc consistency.  
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: 
+With diagonal sudoku, we actually defined additional constraint.  Diagonal sudoku looks for the extra units:
+
+1.  Boxes on the line from upper left hand corner to lower right hand corner 
+2.  Boxes on the line from upper right hand corner to lower left hand corner 
+
+These will be called “units” as column units,row units or square units. We use the diagonal constraints to reduce the possible values for box variable.   
 
 ### Install
 
